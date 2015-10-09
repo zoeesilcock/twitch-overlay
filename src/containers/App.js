@@ -46,7 +46,7 @@ function selectLatestFollower(followers) {
 
 function select(state) {
   return {
-    latestFollower: selectLatestFollower(state.followers)
+    latestFollower: selectLatestFollower(state.default.followers)
   };
 }
 
