@@ -1,1 +1,2 @@
 export const ADD_FOLLOWER = 'ADD_FOLLOWER';
+export const REMOVE_FOLLOWER = 'REMOVE_FOLLOWER';
