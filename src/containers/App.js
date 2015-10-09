@@ -45,7 +45,7 @@ const App = React.createClass({
 });
 
 function selectLatestFollower(followers) {
-  return followers[0];
+  return followers[followers.length - 1];
 }
 
 function select(state) {
