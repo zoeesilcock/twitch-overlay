@@ -1,0 +1,23 @@
+@import "variables";
+
+.follower {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  left: 0;
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid $dark;
+  border-radius: 2px;
+
+  h1 {
+    padding: 0 0 20px 0;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .follower {
+    font-size: 16px;
+  }
+}

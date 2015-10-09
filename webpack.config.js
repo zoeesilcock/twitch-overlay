@@ -4,12 +4,12 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: ['./src/app.js']
+    app: ['./src/index.js']
   },
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: 'app.js'
+    filename: 'index.js'
   },
   module: {
     loaders: [
@@ -27,7 +27,6 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin([
-      'TRELLO_API_KEY'
     ])
   ]
 };
