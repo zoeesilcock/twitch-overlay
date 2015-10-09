@@ -1,6 +1,10 @@
 require('../styles/main.scss');
 
 import React from 'react';
+
+require('velocity-animate');
+require('velocity-animate/velocity.ui');
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { VelocityTransitionGroup } from 'velocity-react';
@@ -19,7 +23,7 @@ const App = React.createClass({
   renderFollower(follower) {
     return (
       <VelocityTransitionGroup enter={{animation: "slideDown"}} leave={{animation: "slideUp"}}>
-        {follower ? <Follower name={follower.name} /> : undefined}
+        {follower ? <Follower dispatch={this.props.dispatch} name={follower.name} /> : undefined}
       </VelocityTransitionGroup>
     );
   },

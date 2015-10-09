@@ -1,13 +1,29 @@
 import React from 'react';
-import classNames from 'classnames';
+import { bindActionCreators } from 'redux';
+import { VelocityComponent } from 'velocity-react';
+import * as FollowerActions from '../actions/followers';
 
 class Follower extends React.Component {
+  componentDidMount() {
+    window.setTimeout(() => {
+      this.refs.velocity.runAnimation();
+    }, 100);
+    window.setTimeout(() => {
+      this.actions.removeFollower(this.props.name);
+    }, 3000);
+  }
+
   render() {
+    const { dispatch, latestFollower } = this.props;
+    this.actions = bindActionCreators(FollowerActions, dispatch);
+
     return (
-      <div className="follower">
-        <h1>{this.props.name}</h1>
-        <span className="followed"> has just followed</span>
-      </div>
+      <VelocityComponent ref="velocity" animation={"callout.tada"} duration={800}>
+        <div className="follower">
+          <h1>{this.props.name}</h1>
+          <span className="followed"> has just followed</span>
+        </div>
+      </VelocityComponent>
     );
   }
 };
