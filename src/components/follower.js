@@ -9,7 +9,7 @@ class Follower extends React.Component {
       this.refs.velocity.runAnimation();
     }, 100);
     window.setTimeout(() => {
-      this.actions.removeFollower(this.props.name);
+      this.actions.removeFollower(this.props.id);
     }, 3000);
   }
 
@@ -29,6 +29,7 @@ class Follower extends React.Component {
 };
 
 Follower.propTypes = {
+  id: React.PropTypes.number.isRequired,
   name: React.PropTypes.string.isRequired
 };
 

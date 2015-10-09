@@ -5,10 +5,10 @@ const initialState = [];
 export default function todos(state = initialState, action) {
   switch (action.type) {
     case ADD_FOLLOWER:
-      return [{ name: action.name }, ...state];
+      return [{ id: state.length, name: action.name }, ...state];
     case REMOVE_FOLLOWER:
       return state.filter(follower =>
-        follower.name !== action.name
+        follower.id !== action.id
       );
     default:
       return state;

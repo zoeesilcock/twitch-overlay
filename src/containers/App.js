@@ -23,7 +23,7 @@ const App = React.createClass({
   renderFollower(follower) {
     return (
       <VelocityTransitionGroup enter={{animation: "slideDown"}} leave={{animation: "slideUp"}}>
-        {follower ? <Follower dispatch={this.props.dispatch} name={follower.name} /> : undefined}
+        {follower ? <Follower dispatch={this.props.dispatch} id={follower.id} name={follower.name} /> : undefined}
       </VelocityTransitionGroup>
     );
   },
